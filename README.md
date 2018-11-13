@@ -8,7 +8,7 @@ This project has been made for exhibitional purposes only.
 
 ### Prerequisites
 
-there is a  <a href="https://html-online.com/editor/">requirements.txt</a> file in the repo
+there is a  <a href="https://github.com/omriluz/Ebay-Watch-Counter/blob/master/requirements.txt">requirements.txt</a> file in the repo
 
 ### Example
 
