@@ -24,15 +24,16 @@ class EbayWatchCounter():
 		soup = BeautifulSoup(r.content, 'html.parser')
 		name = soup.find_all('strong')[0].get_text().split()
 		chars_start, chars_end = string.ascii_letters, string.digits + '!@#$%^&*()?{}'
-		s = HTMLSession()
-		r2 = s.get('https://temp-mail.org/')
-		email_id = r2.html.find('#mail', first=True)
+		# s = HTMLSession()
+		# r2 = s.get('https://temp-mail.org/')
+		# email_id = r2.html.find('#mail', first=True)
 		self.first_name = name[0]
 		self.last_name = name[-1]
 		self.phone = str(soup.find_all('strong')[12])[51:63]
 		self.address = list(soup.find_all('strong'))[6].input['value']
 		self.password = ''.join(random.choice(chars_end) for i in range(5)) + ''.join(random.choice(chars_start) for i in range(5))
-		self.email = str(email_id).split()[10][7:-1]
+		# self.email = str(email_id).split()[10][7:-1]
+		self.email = ''.join(random.choice(chars_start) for i in range(13)) + "@gmail.com"
 
 	def login(self): # login to ebay 
 		self.driver.get('https://reg.ebay.com/reg/PartialReg')
